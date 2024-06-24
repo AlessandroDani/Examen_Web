@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the semillero database table.
@@ -43,14 +45,17 @@ public class Semillero implements Serializable {
 
 	//bi-directional many-to-one association to Capacitacion
 	@OneToMany(mappedBy="semillero")
+	@JsonIgnore
 	private List<Capacitacion> capacitacions;
 
 	//bi-directional many-to-one association to Integrante
 	@OneToMany(mappedBy="semillero")
+	@JsonIgnore
 	private List<Integrante> integrantes;
 
 	//bi-directional many-to-one association to Linea
 	@OneToMany(mappedBy="semillero")
+	@JsonIgnore
 	private List<Linea> lineas;
 
 	//bi-directional many-to-one association to Area

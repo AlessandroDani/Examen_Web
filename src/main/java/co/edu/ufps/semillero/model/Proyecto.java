@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the proyecto database table.
@@ -35,10 +37,12 @@ public class Proyecto implements Serializable {
 
 	//bi-directional many-to-one association to Actividad
 	@OneToMany(mappedBy="proyecto")
+	@JsonIgnore
 	private List<Actividad> actividads;
 
 	//bi-directional many-to-one association to Participacion
 	@OneToMany(mappedBy="proyecto")
+	@JsonIgnore
 	private List<Participacion> participacions;
 
 	//bi-directional many-to-one association to Integrante

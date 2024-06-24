@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the capacitacion database table.
@@ -46,6 +48,7 @@ public class Capacitacion implements Serializable {
 	private String observaciones;
 
 	//bi-directional many-to-one association to Asistencia
+	@JsonIgnore
 	@OneToMany(mappedBy="capacitacion")
 	private List<Asistencia> asistencias;
 
