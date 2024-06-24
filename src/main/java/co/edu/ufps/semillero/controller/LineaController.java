@@ -12,6 +12,12 @@ public class LineaController {
     @Autowired
     private LineaService lineaService;
 
+    /**
+     * Metodo que actualiza la linea recibiendo un id
+     * @param id
+     * @param nuevaLinea
+     * @return la linea con los cambios
+     */
     @PutMapping("/lineas/{id}")
     public Linea actualizarLinea(@PathVariable int id, @RequestBody Linea nuevaLinea) {
         return lineaService.actualizarLinea(id, nuevaLinea);
